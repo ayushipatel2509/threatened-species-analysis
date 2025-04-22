@@ -35,7 +35,7 @@ df_cleaned = df_cleaned.dropna(subset=['Year', 'Count'])
 # Resetting index
 df_cleaned.reset_index(drop=True, inplace=True)
 
-# Saving the cleaned dataset to a CSV file
+# Saving the cleaned dataset to  CSV file
 df_cleaned.to_csv("data/cleaned_ThreatenedSpecies.csv", index=False)
 
 

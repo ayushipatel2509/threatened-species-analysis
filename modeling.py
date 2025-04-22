@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder
-from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
+from sklearn.metrics import  r2_score, mean_absolute_error
 
 # XGBoost model
 from xgboost import XGBRegressor
@@ -61,17 +61,13 @@ best_model = grid_search.best_estimator_
 y_pred = best_model.predict(X_test)
 
 # Metrics
-mse = mean_squared_error(y_test, y_pred)
-rmse = np.sqrt(mse)
 mae = mean_absolute_error(y_test, y_pred)
 r2 = r2_score(y_test, y_pred)
 
 print("\n Final Optimized XGBoost Model")
-print(f"Best Parameters: {grid_search.best_params_}")
-print(f"MSE  : {mse:.2f}")
-print(f"RMSE : {rmse:.2f}")
+print(f"Best  Parameters: {grid_search.best_params_}")
 print(f"MAE  : {mae:.2f}")
-print(f"R²   : {r2:.3f}")
+print(f"R²  : {r2:.3f}")
 
 #  Feature Importance
 feature_names = best_model.named_steps["preprocessor"].transformers_[0][1].get_feature_names_out(categorical_features)
@@ -83,7 +79,7 @@ plt.figure(figsize=(10, 6))
 plt.barh(range(15), importances[indices][:15])
 plt.yticks(range(15), full_feature_names[indices][:15])
 plt.xlabel("Importance")
-plt.title("🌟 Top 15 Feature Importances ")
+plt.title("Top 15 Feature Importances ")
 plt.gca().invert_yaxis()
 plt.tight_layout()
 plt.show()
