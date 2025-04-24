@@ -1,7 +1,4 @@
-## 🎥 Project Presentation Video
-
-[Click here to watch the video](https://drive.google.com/file/d/1BpoWqaxpWMmLq5_BHMEBYu6oWZBQnbtv/view?usp=sharing)
-
+ Project Presentation Video [Click here to watch the video](https://drive.google.com/file/d/1BpoWqaxpWMmLq5_BHMEBYu6oWZBQnbtv/view?usp=sharing)
 
 This project analyzes global trends in threatened species using a dataset sourced from the United Nations, containing information on species type, threat count, country, and year. After loading the raw data, we performed extensive cleaning which included handling missing values, removing irrelevant columns, and engineering new features such as a "Decade" field to capture long-term trends. Exploratory Data Analysis (EDA) was conducted using `pandas`, `seaborn`, and `matplotlib` to identify species most affected and regions with alarming growth in threat counts. The cleaned data was then used to build a machine learning pipeline in `scikit-learn`, incorporating `OneHotEncoder` for categorical encoding, a `ColumnTransformer` for preprocessing, and an `XGBRegressor` from the `xgboost` package to model and predict threat levels based on country, year, and species type.
 
